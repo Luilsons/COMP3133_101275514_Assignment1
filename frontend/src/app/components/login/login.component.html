@@ -1,0 +1,19 @@
+<p style="color: green;">✅ Login component loaded</p>
+<div class="login-container">
+    <h2 style="text-align: center; color: #6C4AB6;">Login</h2>
+  
+    <form (ngSubmit)="loginUser()">
+      <label>Email:</label><br />
+      <input [(ngModel)]="email" name="email" type="email" required placeholder="Enter email" /><br /><br />
+  
+      <label>Password:</label><br />
+      <input [(ngModel)]="password" name="password" type="password" required placeholder="Enter password" /><br /><br />
+  
+      <div *ngIf="errorMessage" style="color: red; margin-bottom: 10px;">
+        {{ errorMessage }}
+      </div>
+  
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  

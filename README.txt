@@ -1,92 +1,132 @@
-COMP3133 GraphQL Employee Management API
+# COMP3133_101275514_Assignment2 – Angular GraphQL Employee Portal
 
-This project is a GraphQL API for managing employee records. It allows users to add, update, delete, and retrieve employees from a MongoDB database using GraphQL.
+## 👨‍🎓 Student Information
+- **Name:** Luilson Sousa  
+- **Student ID:** 101275514  
+- **Course:** COMP3133 – Web and Enterprise Application Development  
+- **Assignment:** Individual Assignment 2 – Full Stack Integration with Angular + GraphQL
 
----------------------------------------------------------------
-Technologies Used
-Node.js
-Express.js
-MongoDB & Mongoose
-GraphQL with Apollo Server
-Postman for API Testing
-Dotenv for Environment Variables
+---
 
-------------------------------------------------------------------
+## 📌 Project Description
 
-Installation
-Clone this repository: git clone https://github.com/Luilsons/COMP3133_101275514_Assignment1.git
-cd COMP3133_101275514_Assignment1
+This project extends the GraphQL API from Assignment 1 by adding a professional **Angular frontend** using **Apollo Angular** for GraphQL communication. The application allows users to:
 
-Install dependencies: npm install
+- 🔐 Login and Signup
+- 🔎 View, Add, Update, and Delete Employees
+- 💾 Store JWT token in `localStorage` for session management
+- 🧭 Navigate using Angular Router with Standalone Components
 
-Set up your .env file:
-MONGO_URI=mongodb+srv://your_username:your_password@your_cluster.mongodb.net/your_db?retryWrites=true&w=majority
+---
+
+## 🧰 Technologies Used
+
+### Backend
+- Node.js
+- Express.js
+- Apollo Server (GraphQL)
+- MongoDB Atlas + Mongoose
+- JWT Authentication
+- Dotenv
+
+### Frontend
+- Angular 16+ (Standalone Components)
+- Apollo Angular
+- TypeScript
+- FormsModule & RouterModule
+- Custom CSS
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Start the Backend
+
+```bash
+cd COMP3133_101275514_Assignment2
+npm install
+```
+
+Create a `.env` file:
+```env
 PORT=5001
-JWT_SECRET=your_secret_key
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_jwt_secret
+```
 
-Start the server: npm start or using nodemon: npx nodemon server.js
+Start the server:
+```bash
+npx nodemon server.js
+```
 
---------------------------------------------------------------------
-GraphQL API Endpoints
+GraphQL should be running at [http://localhost:5001/graphql](http://localhost:5001/graphql)
 
-Get All Employees 
-query {
-  getEmployees {
-    id
-    first_name
-    last_name
-    email
-    designation
-    salary
-  }
-}
+---
 
-Get Employee by ID
-query {
-  searchEmployeeById(eid: "EMPLOYEE_ID_HERE") {
-    id
-    first_name
-    last_name
-  }
-}
+### 2. Start the Frontend
 
-Add Employee
-mutation {
-  addEmployee(
-    first_name: "Alice"
-    last_name: "Johnson"
-    email: "alice@example.com"
-    designation: "Developer"
-    salary: 75000
-    date_of_joining: "2023-07-10"
-    department: "IT"
-    employee_photo: "alice.jpg"
-  ) {
-    id
-    first_name
-  }
-}
+```bash
+cd frontend
+npm install
+ng serve --port 4300
+```
 
-Update Employee
-mutation {
-  updateEmployeeById(
-    eid: "EMPLOYEE_ID_HERE"
-    salary: 90000
-  ) {
-    id
-    salary
-  }
-}
+Visit: [http://localhost:4300](http://localhost:4300)
 
-Delete Employee
-mutation {
-  deleteEmployeeById(eid: "EMPLOYEE_ID_HERE")
-}
+If blank page appears, go to [http://localhost:4300/login](http://localhost:4300/login)
 
-------------------------------------------------------------------
+---
 
-Screenshots 
-Add screenshots of Postman API requests
-Add MongoDB Atlas database screenshots
-GraphQL Studio Query Results
+## 📂 Folder Structure
 
+```
+COMP3133_101275514_Assignment2/
+│
+├── server.js
+├── graphql/
+├── models/
+├── .env
+│
+├── frontend/
+│   └── src/
+│       └── app/
+│           └── components/
+│               ├── login/
+│               ├── signup/
+│               ├── employee-list/
+│               ├── employee-add/
+│               └── ...
+```
+
+---
+
+## 📸 Screenshots (To be added)
+- GraphQL Playground
+- Angular Login/Signup UI
+- Employee List and Detail View
+
+---
+
+## ☁️ Deployment (To be done)
+| Module     | Platform               | Status     |
+|------------|------------------------|------------|
+| Backend    | Heroku/Cyclic/Vercel   | ❌ Pending |
+| Frontend   | Vercel/Netlify         | ❌ Pending |
+
+---
+
+## ✅ Assignment Requirements Checklist
+
+- [x] Angular project with correct naming ✅
+- [x] GitHub repo with correct structure ✅
+- [x] Backend integration (Assignment 1 reused) ✅
+- [x] Login/Signup screens implemented ✅
+- [x] Routing with Angular Router ✅
+- [x] Session stored in `localStorage` ✅
+- [x] Navigates to `/employees` after login ✅
+- [ ] Deployed backend and frontend ❌ (To be completed)
+
+---
+
+## 📅 Last Updated
+April 08, 2025
